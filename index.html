@@ -8,6 +8,11 @@
     </head>
         <body> 
             <a-scene>
+                <a-assets>
+                    <img id="tile-base" src="assets\Tiles_067_basecolor.png">
+                    <img id="tile-ambient-occlusion" src="assets\Tiles_067_ambientOcclusion.png">
+                    <img id="tile-normal" src="assets\Tiles_067_normal.png">
+                </a-assets>
                 <a-plane 
                     color="seagreen" 
                     position="0 0 0" 
@@ -80,7 +85,13 @@
                     >
                 </a-box>
                 <a-box
-                    color="white"
+                    material= 
+                    "src: #tile-base; 
+                    repeat: 10 10; 
+                    ambientOcclusionMap: #tile-ambient-occlusion; 
+                    ambientOcclusionTextureRepeat: 10 10; 
+                    normalMap: #tile-normal; 
+                    normalTextureRepeat: 10 10"
                     position="0 0 -11"
                     width="10"
                     depth="10"
